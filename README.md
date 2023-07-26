@@ -1,5 +1,5 @@
 # health-directory
-a database of scraped information of health directory, along with the scraping tools development for the database
+a scraped database of health directory for malaysia (for a start), along with the scraping tools development for the database.
 
 ## to develop
 - database schema
