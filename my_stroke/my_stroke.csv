@@ -1,0 +1,63 @@
+,Hospital,Address,Telephone,Type
+0,Ara Damansara Medical Centre,"Lot 2, Jalan Lapangan Terbang Subang, Seksyen U2, 40150 Shah Alam, Selangor",03-5639 1212,Private 24 Hours
+1,Assunta Hospital,"Jalan Templer, Pjs 4, 46900 Petaling Jaya, Selangor",03-7872 3000,Private Normal Hours
+2,AVISENA Specialist Hospital,"4, Jalan Ikhtisas, Seksyen 14, Shah Alam, Selangor(Mon-Fri Only)",03-5515 1888,Private Normal Hours
+3,Bagan Specialist Centre,"Jalan Bagan 1, Taman Bagan, 13400 Pulau Pinang",04-371 0000,Private 24 Hours
+4,Borneo Medical Centre,"Lot 10992, 801-2B Jalan Tun Jugah, Kenny Hill, 93350 Kuching, Sarawak",082-507 333,Private 24 Hours
+5,Columbia Asia Hospital Setapak,"Jalan Genting Kelang, No. 1, Jalan Danau Saujana, Taman Danau Kota, 53300 Wilayah Persekutuan, Wilayah Persekutuan Kuala Lumpur",03-4145 9999,Private 24 Hours
+6,Gleneagles Hospital Medini Johor (Comprehensive Stroke Centre),"No 2, Jalan Medini Utara 4, Medini Iskandar, Iskandar Puteri 79250 Johor Bahru, Johor Johor Bahru",+607 560 1111,Private 24 Hours
+7,Gleneagles Hospital Penang,"1, Jalan Pangkor, Pulau Tikus, 10050 George Town, Pulau Pinang",04-222 9111,Private 24 Hours
+8,Gleneagles Kota Kinabalu,"Riverson @ Sembulan, Block A-1, Lorong Riverson @ Sembulan, Borneo, 1, 88100 Kota Kinabalu, Sabah",088-518 888,Private 24 Hours
+9,Gleneagles Kuala Lumpur,"Block A & Block B, 282 & 286, Jalan Ampang, Kampung Berembang, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",03-4141 3000,Private 24 Hours
+10,Pantai Hospital Ayer Keroh,"No. 2418-1, KM 8, Lebuh Ayer Keroh, 75450 Ayer Keroh, Melaka",06-231 9999,Private 24 Hours
+11,Hospital Bintulu,"Jalan Bkt Nyabau, 97000 Bintulu, Sarawak",999,Public 24 Hours
+12,Hospital Fatimah,1 Lebuh Chew Peng Loon Off Jalan Dato’ Lau Pak Khuan Ipoh Garden Ipoh Perak 31400 Malaysia,05-545 5777,Private 24 Hours
+13,Hospital Kuala Lumpur,"23, Jalan Pahang, 50586 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",999,Public Normal Hours
+14,Hospital Lahad Datu,"Jln Lahad Datu - Tawau, 91100 Lahad Datu, Sabah",999,Public Normal Hours
+15,Hospital Melaka,"Jalan Mufti Haji Khalil, 75400 Melaka",999,Public Normal Hours
+16,Hospital Miri,"Jalan Cahaya, 98000 Miri, Sarawak",999,Public Normal Hours
+17,Pantai Hospital Sungai Petani,"1, Pesiaran Cempaka, Bandar Amanjaya, 08000 Sungai Petani, Kedah",04-442 8888,Private 24 Hours
+18,Hospital Pengajar Universiti Putra Malaysia,"Persiaran Mardi - UPM, 43400 Serdang, Selangor",999,Public 24 Hours
+19,Hospital Queen Elizabeth,"13a, Jalan Penampang, 88200 Kota Kinabalu, Sabah",999,Public 24 Hours
+20,Hospital Raja Perempuan Zainab,"15586, Jalan Hospital, Bandar Kota Bharu, 15200 Kota Bharu, Kelantan",999,Public Normal Hours
+21,Hospital Raja Permaisuri Bainun,"Jalan Raja Ashman Shah, 30450 Ipoh, Negeri Perak",999,Public 24 Hours
+22,Hospital Sarikei,"Jalan Rentap, 96100 Sarikei, Sarawak",999,Public Normal Hours
+23,Hospital Seberang Jaya,"13700 Perai, Penang",999,Public 24 Hours
+24,Hospital Seri Manjung,Seri Manjung 32040 Seri Manjung Perak,999,Public Normal Hours
+25,Hospital Sungai Buloh,"Jalan Hospital, 47000 Sungai Buloh, Selangor",999,Public Normal Hours
+26,Hospital Sultan Abdul Halim,"225, Bandar Amanjaya, 08000 Sungai Petani, Kedah",999,Public Normal Hours
+27,Hospital Sultanah Aminah,"J1, Jalan Abu Bakar, 80000 Johor Bahru, Johor",999,Public Normal Hours
+28,Hospital Sultanah Nur Zahirah,"Jalan Sultan Mahmud, 20400 Kuala Terengganu, Terengganu",999,Public 24 Hours
+29,Hospital Taiping,"Jalan Taming Sari, 34000 Taiping, Negeri Perak",999,Public Normal Hours
+30,Hospital Tawau,"67, Peti Surat, 91007 Tawau, Sabah",999,Public Normal Hours
+31,Hospital Sultan Haji Ahmad Shah,"Hospital Temerloh, Jalan Paya Luas, Taman Harapan, 28300 Temerloh, Pahang",999,Public Normal Hours
+32,Hospital Tengku Ampuan Afzan,"Hospital Tengku Ampuan Afzan Pahang, Jalan Tanah Putih, 25100 Kuantan, Pahang",999,Public Normal Hours
+33,Hospital Tengku Ampuan Rahimah,"Jalan Langat, 41200 Klang, Selangor",999,Public Normal Hours
+34,Hospital Tuanku Jaafar,"Jalan Rasah, Bukit Rasah, 70300 Seremban, Negeri Sembilan",999,Public Normal Hours
+35,Hospital Umum Sarawak,"Jalan Hospital, 93586 Kuching, Sarawak",999,Public 24 Hours
+36,Hospital Universiti Sains Malaysia,"Kubang Kerian, 16150 Kota Bharu, Kelantan",999,Public 24 Hours
+37,Island Hospital,"308, Jalan Macalister, 10450 George Town, Pulau Pinang",04-228 8222,Private Normal Hours
+38,Kek Lok Si Charitable Hospital,"623, Jln Balik Pulau, Pekan Ayer Itam, 11500 Pulau Pinang",04-828 3233,Private 24 Hours
+39,KPJ Damansara Specialist Hospital,"119, Jalan SS 20/10, Damansara Utama, 47400 Petaling Jaya, Selangor",03-7718 1000,Private 24 Hours
+40,KPJ Damansara Specialist Hospital 2 (Comprehensive Stroke Centre),"Bukit Lanjan, 60000 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",603-7717 3000,Private 24 Hours
+41,KPJ Ipoh Specialist Hospital,"26, Jalan Raja Dihilir, 30350 Ipoh, Negeri Perak",05-240 8777,Private 24 Hours
+42,KPJ Puteri Specialist,"33, Jalan Tun Abdul Razak (Susur 5), Larkin Jaya, 80350 Johor Bahru, Johor",07-225 3222,Private Normal Hours
+43,KPJ Selangor Hospital,"Jalan Singa 20/1, Seksyen 20, 40300 Shah Alam, Selangor",03-5543 1111,Private Normal Hours
+44,Kuching Specialist Hospital,"Lot 10420, Block 11 Tabuan Stutong Commercial Centre, Jalan Setia Raja Kuching, Sarawak 93350 Malaysia",082-365 777,Private Normal Hours
+45,Loh Guan Lye Hospital,"238, Jalan Macalister, George Town, 10400 George Town, Pulau Pinang",04-238 8888,Private Normal Hours
+46,Normah Medical Specialist Centre,"Lot 937, Section 30 KTLD, Jalan Tunku Abdul Rahman, Petra Jaya, 93050 Kuching, Sarawak",082-440 055,Private 24 Hours
+47,Pantai Hospital Ipoh,"126, Jalan Tambun, Taman Ipoh, 31400 Ipoh, Negeri Perak",05-540 5555,Private 24 Hours
+48,Pantai Hospital Kuala Lumpur,"8, Jalan Bukit Pantai, Taman Bukit Pantai, 59100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",03-2296 0888,Private 24 Hours
+49,Pantai Hospital Penang,"Comprehensive Stroke Centre82, Jalan Tengah, Bandar Bayan Baru, 11900 Bayan Lepas, Pulau Pinang",04-6438 799,Private 24 Hours
+50,ParkCity Medical Centre (PMC),"No. 2, Jalan Inti Sari Perdana, Desa ParkCity, 52200 Kuala Lumpur, Kuala Lumpur, Malaysia",+603 6279 3085,Private 24 Hours
+51,Prince Court Medical Centre,"39, Jalan Kia Peng, Kuala Lumpur, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",03-2160 0000,Private 24 Hours
+52,Pusat Jantung Sarawak,"Pusat Jantung Sarawak, Kuching - Samarahan Expressway, 94300 Kota Samarahan, Sarawak",999,Public Normal Hours
+53,Pusat Perubatan Universiti Kebangsaan Malaysia (Comprehensive Stroke Centre),"Jalan Yaacob Latif, Bandar Tun Razak, 56000 Kuala Lumpur, Wilayah Persekutuan",999,Public 24 Hours
+54,Regency Specialist Hospital,"1, Jalan Suria, Bandar Baru Seri Alam, 81750 Masai, Johor",07-381 7700,Private 24 Hours
+55,Sibu Hospital,"KM 5 1/2, Jalan Ulu Oya, 96000 Sibu, Sarawak",084-343333,Public Normal Hours
+56,Subang Jaya Medical Centre (Comprehensive Stroke Centre),"Jalan SS12/1, Ss 12, 47500 Subang Jaya, Selangor",03-5639 1212,Private 24 Hours
+57,Sunway Medical Centre (Comprehensive Stroke Centre),"5, Jalan Lagoon Selatan, Bandar Sunway, 47500 Petaling Jaya, Selangor",03-7491 9191,Private 24 Hours
+58,Sunway Medical Centre Velocity,"Sunway Medical Centre Velocity, Lingkaran SV, Sunway Velocity, 55100 Kuala Lumpur(9am-5pm)",03-9772 9191 (Emergency Hotline),Private 24 Hours
+59,Thomson Hospital Kota Damansara,"11, Jalan Teknologi, Pju 5 Kota Damansara, 47810 Petaling Jaya, Selangor",03-6287 1111,Private 24 Hours
+60,Timberland Medical Centre,"5164-5165, Block 16 KLCD 2 1/2 Mile, Rock Road, Taman Timberland, 93250 Kuching, Sarawak",082-234466,Private Normal Hours
+61,Tung Shin Hospital,"102, Jalan Pudu, Bukit Bintang, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",03-2037 2288,Private 24 Hours
