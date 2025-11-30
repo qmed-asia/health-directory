@@ -6,7 +6,14 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Configure CORS
+// Allow all origins for public API access. 
+// If you want to restrict to specific domains, replace '*' with your frontend URL (e.g., 'https://your-frontend.vercel.app')
+app.use(cors({
+    origin: '*', 
+    methods: ['GET', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 // Serve static files from dist
