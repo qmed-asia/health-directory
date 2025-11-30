@@ -1,14 +1,32 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
-import { allDoctors } from "@/data/doctors";
+import { fetchDoctors } from "@/lib/api";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Stethoscope, GraduationCap, Languages, Building2, User } from "lucide-react";
+import { ArrowLeft, Stethoscope, GraduationCap, Languages, Building2, User, Loader2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useQuery } from "@tanstack/react-query";
 
 const DoctorDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const { data: allDoctors = [], isLoading, error } = useQuery({
+    queryKey: ['doctors'],
+    queryFn: fetchDoctors
+  });
+
   const doctor = allDoctors.find(d => d.id === id);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <div className="container mx-auto px-4 py-16 flex justify-center">
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        </div>
+      </div>
+    );
+  }
 
   if (!doctor) {
     return (

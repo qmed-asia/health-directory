@@ -1,15 +1,21 @@
 import { useState, useMemo } from "react";
 import { Navbar } from "@/components/Navbar";
 import { DoctorCard } from "@/components/DoctorCard";
-import { allDoctors, Doctor } from "@/data/doctors";
+import { fetchDoctors, Doctor } from "@/lib/api";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 
 const Doctors = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSource, setSelectedSource] = useState<string>("all");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("all");
+
+  const { data: allDoctors = [], isLoading, error } = useQuery({
+    queryKey: ['doctors'],
+    queryFn: fetchDoctors
+  });
 
   const sources = ["all", "columbia", "gleaneagles", "tungshin", "georgetownspecialist"];
 
@@ -29,7 +35,7 @@ const Doctors = () => {
       }
     });
     return ["all", ...Array.from(specialtySet).sort()];
-  }, []);
+  }, [allDoctors]);
 
   const getSearchableText = (doctor: Doctor): string => {
     let text = "";
@@ -69,7 +75,7 @@ const Doctors = () => {
 
       return matchesSearch && matchesSource && matchesSpecialty;
     });
-  }, [searchQuery, selectedSource, selectedSpecialty]);
+  }, [allDoctors, searchQuery, selectedSource, selectedSpecialty]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -124,23 +130,41 @@ const Doctors = () => {
           </div>
         </div>
 
+        {/* Loading State */}
+        {isLoading && (
+          <div className="flex justify-center items-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        )}
+
+        {/* Error State */}
+        {error && (
+           <div className="text-center py-16">
+            <p className="text-xl text-red-500">Failed to load doctors. Please try again later.</p>
+          </div>
+        )}
+
         {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-muted-foreground">
-            Showing {filteredDoctors.length} {filteredDoctors.length === 1 ? 'doctor' : 'doctors'}
-          </p>
-        </div>
+        {!isLoading && !error && (
+          <div className="mb-6">
+            <p className="text-muted-foreground">
+              Showing {filteredDoctors.length} {filteredDoctors.length === 1 ? 'doctor' : 'doctors'}
+            </p>
+          </div>
+        )}
 
         {/* Doctor Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDoctors.map((doctor, index) => (
-            <div key={doctor.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
-              <DoctorCard doctor={doctor} />
-            </div>
-          ))}
-        </div>
+        {!isLoading && !error && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredDoctors.map((doctor, index) => (
+              <div key={doctor.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                <DoctorCard doctor={doctor} />
+              </div>
+            ))}
+          </div>
+        )}
 
-        {filteredDoctors.length === 0 && (
+        {!isLoading && !error && filteredDoctors.length === 0 && (
           <div className="text-center py-16">
             <p className="text-xl text-muted-foreground">No doctors found matching your criteria</p>
           </div>

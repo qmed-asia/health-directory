@@ -12,6 +12,7 @@ app.use(express.json());
 // Serve static files from dist
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
 // Helper to read JSON file
 const readJson = (filename) => {
@@ -39,9 +40,17 @@ app.get('/api/doctors', (req, res) => {
     const files = fs.readdirSync(path.join(__dirname, 'dist'));
     files.forEach(file => {
         if (file.startsWith('doctors_') && file.endsWith('.json')) {
-            const hospitalDoctors = readJson(file);
-            // Add source file info if needed
-            doctors.push(...hospitalDoctors);
+            const rawData = readJson(file);
+            // Extract source name from filename (e.g., doctors_columbia.json -> columbia)
+            const source = file.replace('doctors_', '').replace('.json', '');
+            
+            // Add source field to each doctor object
+            const doctorsWithSource = rawData.map(doc => ({
+                ...doc,
+                source: source
+            }));
+            
+            doctors.push(...doctorsWithSource);
         }
     });
     res.json(doctors);
@@ -63,16 +72,34 @@ app.get('/api-doc', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'api-doc.html'));
 });
 
-app.get('/', (req, res) => {
-    res.send(`
-        <h1>Health Directory API</h1>
-        <p>Welcome! Please visit the <a href="/api-doc">API Documentation</a> for details.</p>
-        <p>Quick Links:</p>
-        <ul>
-            <li><a href="/api/hospitals">/api/hospitals</a></li>
-            <li><a href="/api/doctors">/api/doctors</a></li>
-        </ul>
-    `);
+// Handle SPA routing for frontend
+app.use((req, res) => {
+    // Check if request is for API (though this should be caught by previous routes if they matched)
+    // Since we are in a fallback middleware, no previous route matched.
+    if (req.path.startsWith('/api')) {
+        return res.status(404).json({ error: 'API endpoint not found' });
+    }
+
+    const frontendIndex = path.join(__dirname, 'frontend/dist', 'index.html');
+    if (fs.existsSync(frontendIndex)) {
+        res.sendFile(frontendIndex);
+    } else {
+        // Fallback for when frontend is not built
+        if (req.path === '/') {
+            res.send(`
+                <h1>Health Directory API</h1>
+                <p>Welcome! Please visit the <a href="/api-doc">API Documentation</a> for details.</p>
+                <p>Quick Links:</p>
+                <ul>
+                    <li><a href="/api/hospitals">/api/hospitals</a></li>
+                    <li><a href="/api/doctors">/api/doctors</a></li>
+                </ul>
+                <p><em>Note: Frontend build not found at frontend/dist</em></p>
+            `);
+        } else {
+            res.status(404).send('Not Found');
+        }
+    }
 });
 
 app.listen(PORT, () => {

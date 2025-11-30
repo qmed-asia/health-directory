@@ -1,4 +1,4 @@
-import { Doctor } from "@/data/doctors";
+import { Doctor } from "@/lib/api";
 import { Card } from "@/components/ui/card";
 import { Stethoscope, GraduationCap, Languages, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";

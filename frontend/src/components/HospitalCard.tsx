@@ -1,4 +1,4 @@
-import { Hospital } from "@/data/hospitals";
+import { Hospital } from "@/lib/api";
 import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Globe } from "lucide-react";
 import { Link } from "react-router-dom";

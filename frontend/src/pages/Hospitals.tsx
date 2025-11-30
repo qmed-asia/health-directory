@@ -1,11 +1,12 @@
 import { useState, useMemo } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HospitalCard } from "@/components/HospitalCard";
-import { hospitals } from "@/data/hospitals";
+import { fetchHospitals } from "@/lib/api";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 const Hospitals = () => {
   const [searchParams] = useSearchParams();
@@ -15,15 +16,20 @@ const Hospitals = () => {
   const [selectedState, setSelectedState] = useState<string>("all");
   const [selectedGroup, setSelectedGroup] = useState<string>("all");
 
+  const { data: hospitals = [], isLoading, error } = useQuery({
+    queryKey: ['hospitals'],
+    queryFn: fetchHospitals
+  });
+
   const states = useMemo(() => {
     const stateSet = new Set(hospitals.map(h => h.state));
     return Array.from(stateSet).sort();
-  }, []);
+  }, [hospitals]);
 
   const groups = useMemo(() => {
     const groupSet = new Set(hospitals.map(h => h.hospitalGroup));
     return Array.from(groupSet).sort();
-  }, []);
+  }, [hospitals]);
 
   const filteredHospitals = useMemo(() => {
     return hospitals.filter(hospital => {
@@ -36,7 +42,7 @@ const Hospitals = () => {
 
       return matchesSearch && matchesState && matchesGroup;
     });
-  }, [searchQuery, selectedState, selectedGroup]);
+  }, [hospitals, searchQuery, selectedState, selectedGroup]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -89,23 +95,41 @@ const Hospitals = () => {
           </div>
         </div>
 
+        {/* Loading State */}
+        {isLoading && (
+          <div className="flex justify-center items-center py-20">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        )}
+
+        {/* Error State */}
+        {error && (
+           <div className="text-center py-16">
+            <p className="text-xl text-red-500">Failed to load hospitals. Please try again later.</p>
+          </div>
+        )}
+
         {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-muted-foreground">
-            Showing {filteredHospitals.length} {filteredHospitals.length === 1 ? 'hospital' : 'hospitals'}
-          </p>
-        </div>
+        {!isLoading && !error && (
+          <div className="mb-6">
+            <p className="text-muted-foreground">
+              Showing {filteredHospitals.length} {filteredHospitals.length === 1 ? 'hospital' : 'hospitals'}
+            </p>
+          </div>
+        )}
 
         {/* Hospital Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredHospitals.map((hospital, index) => (
-            <div key={hospital.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
-              <HospitalCard hospital={hospital} />
-            </div>
-          ))}
-        </div>
+        {!isLoading && !error && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredHospitals.map((hospital, index) => (
+              <div key={hospital.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                <HospitalCard hospital={hospital} />
+              </div>
+            ))}
+          </div>
+        )}
 
-        {filteredHospitals.length === 0 && (
+        {!isLoading && !error && filteredHospitals.length === 0 && (
           <div className="text-center py-16">
             <p className="text-xl text-muted-foreground">No hospitals found matching your criteria</p>
           </div>
