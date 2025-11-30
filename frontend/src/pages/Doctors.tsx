@@ -120,11 +120,16 @@ const Doctors = () => {
                 <SelectValue placeholder="Select Specialty" />
               </SelectTrigger>
               <SelectContent>
-                {specialties.map(specialty => (
-                  <SelectItem key={specialty} value={specialty} className="capitalize">
-                    {specialty === "all" ? "All Specialties" : specialty}
-                  </SelectItem>
-                ))}
+                {specialties.map(specialty => {
+                  // Filter out empty or undefined specialties to prevent Radix UI error
+                  if (!specialty || specialty.trim() === "") return null;
+                  
+                  return (
+                    <SelectItem key={specialty} value={specialty} className="capitalize">
+                      {specialty === "all" ? "All Specialties" : specialty}
+                    </SelectItem>
+                  );
+                })}
               </SelectContent>
             </Select>
           </div>

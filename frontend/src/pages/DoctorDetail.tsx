@@ -169,17 +169,13 @@ const DoctorDetail = () => {
                   {getSpecialty().join(' and ')}.
                 </p>
                 <p>
-                  With extensive training and experience in their field, they are committed to
-                  providing excellent patient care and maintaining the highest standards of
-                  medical practice.
+                  Contact for more info.
                 </p>
                 <div className="pt-4">
                   <h3 className="font-semibold text-foreground mb-2">Professional Focus</h3>
                   <ul className="list-disc list-inside space-y-1">
                     <li>Patient-centered care approach</li>
-                    <li>Evidence-based medical practice</li>
-                    <li>Continuous professional development</li>
-                    <li>Comprehensive treatment planning</li>
+                    
                   </ul>
                 </div>
               </div>
