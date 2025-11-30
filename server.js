@@ -11,6 +11,7 @@ app.use(express.json());
 
 // Serve static files from dist
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Helper to read JSON file
 const readJson = (filename) => {
@@ -58,17 +59,18 @@ app.get('/api/doctors/:source', (req, res) => {
     }
 });
 
+app.get('/api-doc', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'api-doc.html'));
+});
+
 app.get('/', (req, res) => {
     res.send(`
         <h1>Health Directory API</h1>
-        <p>Available endpoints:</p>
+        <p>Welcome! Please visit the <a href="/api-doc">API Documentation</a> for details.</p>
+        <p>Quick Links:</p>
         <ul>
             <li><a href="/api/hospitals">/api/hospitals</a></li>
-            <li><a href="/api/doctors">/api/doctors</a> (All aggregated)</li>
-            <li><a href="/api/doctors/columbia">/api/doctors/columbia</a></li>
-            <li><a href="/api/doctors/gleaneagles">/api/doctors/gleaneagles</a></li>
-            <li><a href="/api/doctors/tungshin">/api/doctors/tungshin</a></li>
-            <li><a href="/api/doctors/georgetownspecialist">/api/doctors/georgetownspecialist</a></li>
+            <li><a href="/api/doctors">/api/doctors</a></li>
         </ul>
     `);
 });

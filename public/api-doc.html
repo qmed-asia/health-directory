@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Directory API Documentation</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 960px; margin: 0 auto; padding: 20px; }
+        h1 { border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        h2 { margin-top: 40px; color: #2c3e50; }
+        h3 { margin-top: 20px; color: #34495e; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .endpoint { background: #e8f4f8; padding: 10px; border-left: 5px solid #3498db; margin-bottom: 20px; }
+        .method { font-weight: bold; color: #2980b9; margin-right: 10px; }
+        .url { font-family: monospace; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; }
+        th { background-color: #f8f9fa; }
+        .note { background: #fff3cd; padding: 10px; border-left: 5px solid #ffc107; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Health Directory API Documentation</h1>
+    <p>Welcome to the Health Directory API. This API provides access to scraped data of hospitals and doctors in Malaysia.</p>
+
+    <h2>Base URL</h2>
+    <p><code>/api</code></p>
+
+    <h2>Endpoints</h2>
+
+    <div class="endpoint">
+        <span class="method">GET</span> <span class="url">/hospitals</span>
+    </div>
+    <p>Returns a list of hospitals.</p>
+    
+    <h3>Response Schema</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>""</code> (Empty Key)</td>
+                <td>String</td>
+                <td>Name of the Hospital (e.g., "KPJ Batu Pahat Specialist Hospital")</td>
+            </tr>
+            <tr>
+                <td><code>HOSPITAL GROUP</code></td>
+                <td>String</td>
+                <td>Group name (e.g., "KPJ")</td>
+            </tr>
+            <tr>
+                <td><code>ADDRESS</code></td>
+                <td>String</td>
+                <td>Full address</td>
+            </tr>
+            <tr>
+                <td><code>CITY</code></td>
+                <td>String</td>
+                <td>City</td>
+            </tr>
+            <tr>
+                <td><code>STATE</code></td>
+                <td>String</td>
+                <td>State</td>
+            </tr>
+            <tr>
+                <td><code>NO. TELEPHONE</code></td>
+                <td>String</td>
+                <td>Contact number</td>
+            </tr>
+             <tr>
+                <td><code>Website</code></td>
+                <td>String</td>
+                <td>Official website URL</td>
+            </tr>
+             <tr>
+                <td><code>Doctor Directory</code></td>
+                <td>String</td>
+                <td>Link to the hospital's doctor directory page</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <div class="endpoint">
+        <span class="method">GET</span> <span class="url">/doctors</span>
+    </div>
+    <p>Returns an aggregated list of all doctors from all available sources.</p>
+    <div class="note">
+        <strong>Note:</strong> Since data is scraped from different sources, the schema varies.
+    </div>
+
+    <hr>
+
+    <div class="endpoint">
+        <span class="method">GET</span> <span class="url">/doctors/:source</span>
+    </div>
+    <p>Returns a list of doctors for a specific source/hospital group.</p>
+    <p><strong>Available Sources:</strong> <code>columbia</code>, <code>gleaneagles</code>, <code>tungshin</code>, <code>georgetownspecialist</code></p>
+
+    <h3>Schema Variation by Source</h3>
+
+    <h4>Source: <code>columbia</code></h4>
+    <table>
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td><code>Name</code></td><td>Doctor's Name</td></tr>
+            <tr><td><code>Speciality Title</code></td><td>Specialty (e.g., "General Practice")</td></tr>
+            <tr><td><code>Designation</code></td><td>Job Title</td></tr>
+            <tr><td><code>Qualification</code></td><td>Medical Qualifications</td></tr>
+            <tr><td><code>Link</code></td><td>Profile Identifier</td></tr>
+        </tbody>
+    </table>
+
+    <h4>Source: <code>gleaneagles</code></h4>
+    <table>
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td><code>Title</code></td><td>Doctor's Name (e.g., "Abd Aziz Yahya")</td></tr>
+            <tr><td><code>Salutation</code></td><td>(e.g., "Datuk Dr.")</td></tr>
+            <tr><td><code>SpecialtyName</code></td><td>Specialty (delimited by ##)</td></tr>
+            <tr><td><code>HospitalName</code></td><td>Specific hospital branch</td></tr>
+            <tr><td><code>LanguageSpoken</code></td><td>Languages spoken</td></tr>
+        </tbody>
+    </table>
+
+    <h4>Source: <code>tungshin</code></h4>
+    <table>
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+            <tr><td><code>Name</code></td><td>Doctor's Name</td></tr>
+            <tr><td><code>Specialty</code></td><td>Medical Specialty</td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
