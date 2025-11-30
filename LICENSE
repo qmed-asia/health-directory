@@ -1,21 +1,80 @@
-MIT License
+# Qmed Asia Attribution License (QAAL)
 
-Copyright (c) 2023 Qmed Asia
+**Copyright (c) 2023 Qmed Asia**
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## 1. Attribution Requirement
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Any use, modification, or distribution of the Software or any derivative works must include clear and prominent attribution to Qmed Asia. The following conditions apply to all uses:
+
+### 1.1 Source Code Attribution
+- Include the original copyright notice and this license in all copies or substantial portions of the Software
+- Add a comment header in modified source files stating: "Based on or derived from Qmed Asia software"
+- Maintain a CONTRIBUTORS.md or similar file crediting Qmed Asia as the original creator
+
+### 1.2 Documentation Attribution
+- Include attribution to Qmed Asia in README files, documentation, or help sections
+- Include a statement such as: "This software is based on technology developed by Qmed Asia"
+- Provide a link to Qmed Asia's original repository or website (if applicable)
+
+### 1.3 User-Facing Attribution
+- If the Software is integrated into an application or service, include visible attribution in:
+  - About/Credits sections
+  - Application footer or information screen
+  - License/Acknowledgments file bundled with the product
+- Attribution must be easily accessible to end users
+
+### 1.4 Distribution Attribution
+- Any distribution, publication, or release of the Software (modified or unmodified) must include this license and attribution
+- Include attribution in any packaging, installers, or distribution media
+
+## 2. Attribution Format
+
+The minimum attribution statement should read:
+
+```
+Original work by Qmed Asia
+Website: [Qmed Asia website/repository]
+License: Qmed Asia Attribution License (QAAL)
+```
+
+Alternatively, you may use:
+
+```
+Derived from software created by Qmed Asia
+Original source available at [URL]
+```
+
+## 3. Standard MIT Conditions
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+## 4. Warranty Disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## 5. Non-Compliance
+
+Failure to provide proper attribution as outlined in Section 1 may result in:
+- Removal of commercial or public rights to use the Software
+- Legal action to enforce compliance with this license
+- Requirement to cease distribution until proper attribution is added
+
+## 6. Changes to This License
+
+Qmed Asia reserves the right to modify this license for future versions of the Software. Existing versions remain under this license unless explicitly updated by Qmed Asia.
+
+---
+
+**How to Apply This License to Your Project:**
+
+1. Copy this license text to a file named `LICENSE` or `LICENSE.md` in your project root
+2. Add the following header to your main source files:
+   ```
+   // Copyright (c) 2023 Qmed Asia
+   // Licensed under the Qmed Asia Attribution License (QAAL)
+   // See LICENSE file for details
+   ```
+3. Include attribution in your README and any user-facing documentation
+4. Update the year if you make modifications: `Copyright (c) 2023-[Current Year] Qmed Asia`
