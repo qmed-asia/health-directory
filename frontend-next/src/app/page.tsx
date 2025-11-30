@@ -71,6 +71,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Footer Section */}
+      <footer className="w-full py-6 bg-background border-t border-border/40">
+        <div className="container px-4 md:px-6 mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2025 MYHospital. Healthcare Directory for Malaysia. <br className="md:hidden" /> Open Source Project by <a href="https://qmed.asia" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Qmed Asia</a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

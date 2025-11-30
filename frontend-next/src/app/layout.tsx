@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Navbar } from "@/components/Navbar";
-import { Disclaimer } from "@/components/Disclaimer";
+import DisclaimerWrapper from "@/components/DisclaimerWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
-            <Disclaimer />
+            <DisclaimerWrapper />
           </div>
         </Providers>
       </body>
