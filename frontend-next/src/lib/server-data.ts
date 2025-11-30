@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { Doctor, Hospital } from './api';
 
+export type { Doctor, Hospital };
+
 const DATA_DIR = path.join(process.cwd(), 'data');
 
 export const getHospitals = async (): Promise<Hospital[]> => {
